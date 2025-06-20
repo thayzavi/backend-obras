@@ -51,7 +51,7 @@ exports.updateFiscalizacao = async (req, res) => {
         }
         res.json(fiscalizacao);
     }   catch (error) {
-        res.status(400).json({message: error.messsage})
+        res.status(400).json({message: error.message})
     }
 };
 
@@ -63,7 +63,7 @@ exports.deleteFiscalizacao = async (req, res) => {
         }
         res.json({ message: 'Fiscalização removida'});
     }   catch (error) {
-        res.status(400).json({message: error.messsage})
+        res.status(400).json({message: error.message})
     }
 };
 
