@@ -3,8 +3,7 @@ const Obra = require('../../src/models/Obra');
 
 exports.getAllFiscalizacoes = async (req, res) => {
     try {
-    const fiscalizacoes = await Fiscali
-    zacoes.find().sort({ data: -1 }).populate('obra');
+    const fiscalizacoes = await Fiscalizacao.find().sort({ data: -1 }).populate('obra');
     res.json(fiscalizacoes);
     } catch (error) {
         res.status(500).json({ message: error.message});
@@ -19,9 +18,8 @@ exports.createFiscalizacao = async (req, res) =>{
         }
 
         const Fiscalizacao = new Fiscalizacao(req.body);
-        await Fiscalizacao.save();
-
-        res.status(201).json(Fiscalizacao);
+        await novaFiscalizacao.save();
+        res.status(201).json(novaFiscalizacao);
     }   catch (error){
         res.status(400).json({ message: error.message})
     }
