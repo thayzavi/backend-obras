@@ -10,20 +10,21 @@ exports.getAllFiscalizacoes = async (req, res) => {
     }
 };
 
-exports.createFiscalizacao = async (req, res) =>{
-    try{
+exports.createFiscalizacao = async (req, res) => {
+    try {
         const obra = await Obra.findById(req.body.obra);
         if (!obra) {
-            return res.status(404).json({ message: 'Obra não encontrada'});
+            return res.status(404).json({ message: 'Obra não encontrada' });
         }
 
-        const Fiscalizacao = new Fiscalizacao(req.body);
+        const novaFiscalizacao = new Fiscalizacao(req.body);
         await novaFiscalizacao.save();
         res.status(201).json(novaFiscalizacao);
-    }   catch (error){
-        res.status(400).json({ message: error.message})
+    } catch (error) {
+        res.status(400).json({ message: error.message });
     }
 };
+
 
 exports.getFiscalizacaoById = async (req, res) => {
     try{
