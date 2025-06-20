@@ -17,7 +17,7 @@ const ObraSchema = new mongoose.Schema({
     },
     dataFim:{
         type: Date,
-        required: true,
+        required: false,
     },
     localizacao: {
         lat:{ type: Number, required: true},
