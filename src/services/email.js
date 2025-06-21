@@ -21,7 +21,7 @@ const sendObraDetailsEmail = async(toEmail, obra) => {
         <h2>${obra.nome}</h2>
         <p><strong>Responsável:</strong> ${obra.responsavel}</p>
         <p><strong> Data de Início:</strong> ${obra.dataInicio.toLocaleDateString()}</p>
-        <p><strong>Localização:</strong> Latitude:${obra.localizacao.lat}, Longitude: ${obra.localizacao.lng}</p>
+        <p><strong>Localização:${obra.endereco}</p>
         <p><strong>Descrição:</strong> ${obra.descricao || 'Nenhuma descrição fornecida'}</p>
         ${obra.foto ? `<img src="${obra.foto}" alt="Foto da Obra" width="300">` : ''}`
     };
