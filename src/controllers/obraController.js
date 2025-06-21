@@ -80,8 +80,10 @@ exports.sendObraDetails = async (req, res) => {//busca as informações da obra 
             return res.status(404).json({message: 'Obra não encontrada'});
         }
 
+        const fiscalizacoes = await Fiscalizacao.find({ obra: obra._id}); //busca as informações da fiscalização 
+
         const {email} = req.body;
-        await sendObraDetailsEmail(email, obra);
+        await sendObraDetailsEmail(email, obra, fiscalizacoes);
 
         res.json({message: 'Detalhes da obra enviados por email'});
     } catch (error) {
