@@ -23,6 +23,9 @@ const ObraSchema = new mongoose.Schema({
         lat:{ type: Number, required: true},
         lng: { type: Number, required: true}
     },
+    endereco: { 
+        type: String, 
+        trim: true },
     descricao: {
         type: String,
         trim: true,
