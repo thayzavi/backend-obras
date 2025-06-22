@@ -41,6 +41,7 @@ const sendObraDetailsEmail = async(toEmail, obra, fiscalizacoes = []) => {
         <h2>${obra.nome}</h2>
         <p><strong>Responsável:</strong> ${obra.responsavel}</p>
         <p><strong> Data de Início:</strong> ${obra.dataInicio.toLocaleDateString()}</p>
+        <p><strong> Previsão de Término:</strong> ${obra.dataFim.toLocaleDateString()}</p>
         <p><strong>Localização:${obra.endereco}</p>
         <p><strong>Descrição:</strong> ${obra.descricao || 'Nenhuma descrição fornecida'}</p>
         ${obra.foto ? `<img src="${obra.foto}" alt="Foto da Obra" width="300">` : ''}
