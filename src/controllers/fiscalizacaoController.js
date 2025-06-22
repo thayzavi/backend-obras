@@ -43,8 +43,8 @@ exports.updateFiscalizacao = async (req, res) => {
         const fiscalizacao = await Fiscalizacao.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
             runValidators: true
-        }).populate('obra');
-
+        }); 
+        
         if(!fiscalizacao) {
             return res.status(404).json({ message: 'Fiscalização não encontrada'});
         }
