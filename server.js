@@ -10,7 +10,9 @@ const app = express();
 
 app.use(cors());
 
-app.use(express.json({ limit: '10mb' })); 
+app.use(express.json({ limit: '10mb' })); // Define o limite máximo do tamanho , para base64
+
+//Limita a requisição a 10 meg, para img muitos grandes
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 require('dotenv').config();
