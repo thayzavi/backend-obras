@@ -1,10 +1,14 @@
 const dotenv = require('dotenv');
+require('dotenv').config();
+
+
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./src/config/db');
 
 const obraRoutes = require('./src/routes/obraRoutes');
 const fiscalizacaoRoutes = require('./src/routes/fiscalizacaoRoutes');
+const assistenteRoutes = require('./src/routes/assistenteRoutes');
 
 const app = express();
 
@@ -21,6 +25,7 @@ connectDB();
 
 app.use('/api/obras', obraRoutes);
 app.use('/api/fiscalizacoes', fiscalizacaoRoutes);
+app.use('api/assistente', assistenteRoutes);
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
