@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
     const fiscalizacoes = await Fiscalizacao.find().limit(5).populate('obra');
 
     const obrasTexto = obras.map(o => {
-        return `- Obra ${o.nome}, endereço: ${o.endereco}, responsável: ${o.responsavel}, Data início: ${o.dataInicio?.toISOString()?.split('T')[0]}, Data fim: Data início: ${o.dataInicio?.toISOString()?.split('T')[0]}`;
+        return `- Obra ${o.nome}, endereço: ${o.endereco}, responsável: ${o.responsavel}, Data início: ${o.dataInicio?.toISOString()?.split('T')[0]}, Data fim: ${o.dataFim?.toISOString()?.split('T')[0]}`;
     }).join('\n');
 
     const fiscalizacoesTexto = fiscalizacoes.map(f => {
