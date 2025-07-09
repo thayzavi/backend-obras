@@ -25,7 +25,7 @@ connectDB();
 
 app.use('/api/obras', obraRoutes);
 app.use('/api/fiscalizacoes', fiscalizacaoRoutes);
-app.use('api/assistente', assistenteRoutes);
+app.use('/api/assistente', assistenteRoutes);
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
